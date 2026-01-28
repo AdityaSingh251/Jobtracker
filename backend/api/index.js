@@ -14,8 +14,8 @@ connectDB();
 app.use(cors());
 app.use(express.json());
 
-app.get("/api", (req, res) => {
-  res.send("Job Tracker API Running ✅");
+app.get("/", (req, res) => {
+  res.send("Job Tracker backend Running ✅");
 });
 
 app.use("/api/auth", authRoutes);

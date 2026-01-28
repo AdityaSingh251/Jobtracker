@@ -14,11 +14,14 @@ connectDB();
 app.use(cors());
 app.use(express.json());
 
-app.get("/", (req, res) => {
-  res.send("Job Tracker backend Running ✅");
+app.get("/", (req, res) =>  {
+  res.status(200).json({
+    message:"Backend Running",
+    status: "ok"
 });
 
 app.use("/api/auth", authRoutes);
 app.use("/api/jobs", jobRoutes);
 
 module.exports = app;
+})

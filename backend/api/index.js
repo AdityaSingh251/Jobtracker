@@ -14,15 +14,11 @@ connectDB();
 app.use(cors());
 app.use(express.json());
 
-app.get("/favicon.ico",(req,res)=>res.status(204).end());
-app.get("/", (req, res) =>  {
-  res.status(200).json({
-    message:"Backend Running",
-    status: "ok"
+app.get("/api", (req, res) => {
+  res.send("Job Tracker API Running ✅");
 });
 
 app.use("/api/auth", authRoutes);
 app.use("/api/jobs", jobRoutes);
 
 module.exports = app;
-})

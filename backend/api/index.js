@@ -14,6 +14,7 @@ connectDB();
 app.use(cors());
 app.use(express.json());
 
+app.get("/favicon.ico",(req,res)=>res.status(204).end());
 app.get("/", (req, res) =>  {
   res.status(200).json({
     message:"Backend Running",
